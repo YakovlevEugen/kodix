@@ -4,6 +4,8 @@ let formatter = new Intl.NumberFormat(),
     $document = $(document),
     $window = $(window);
 
+let flexCarTableFlag = window.location.pathname.indexOf('index-grid') == '-1' ? true : false;
+
 $(function() {
   svg4everybody();
   $('.select-base').fancySelect();
@@ -77,8 +79,9 @@ $window.on('scroll', function() {
 });
 
 function renderCarsTableHead() {
-  return '<div class="car-table__tbody">\n'
-  + '<div class="car-table__tr">\n'
+  let trStart = flexCarTableFlag ? '<div class="car-table__tbody">\n<div class="car-table__tr">\n' : '<div class="car-table__th">\n';
+
+  return trStart
   + '<div class="car-table__cell car-table__cell_th car-table__cell_name">Название</div>\n'
   + '<div class="car-table__cell car-table__cell_th car-table__cell_year">Год</div>\n'
   + '<div class="car-table__cell car-table__cell_th car-table__cell_color">Цвет</div>\n'
