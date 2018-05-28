@@ -1,0 +1,42 @@
+.btn {
+  @extend %btn;
+
+  &_base {
+    @include btn-theme(white, $base-color);
+  }
+
+  &_primary {
+    @include btn-theme(white, $primary-color);
+  }
+
+  &_full-width {
+    width: 100%;
+  }
+
+  .icon-arrow_small {
+    margin-left: 5px;
+    vertical-align: baseline;
+
+    @include breakpoint {
+      margin-left: 0;
+    }
+  }
+}
+
+.delete-btn {
+  padding: 5px 15px;
+  color: $gray-color;
+  font-size: 14px;
+  font-weight: 300;
+  border-radius: 20px;
+
+  @include breakpoint {
+    color: white;
+    background-color: $base-color;
+  }
+
+  &:hover {
+    color: white;
+    background-color: $base-color;
+  }
+}

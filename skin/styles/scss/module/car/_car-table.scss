@@ -1,0 +1,180 @@
+.main-car-table {
+  margin-top: 150px;
+
+  @include breakpoint {
+    margin-top: 55px;
+  }
+}
+
+.car-table {
+  $root: &;
+  display: table;
+  width: 100%;
+  border-color: $gray-color-lighter;
+  border-width: 0 1px 1px 1px;
+  border-style: solid;
+  border-radius: 6px;
+  overflow: hidden;
+
+  @include breakpoint {
+    display: block;
+    border-radius: 0;
+  }
+
+  &__tbody {
+    display: table-row-group;
+
+    @include breakpoint {
+      display: block;
+    }
+  }
+
+  &__tr {
+    display: table-row;
+    background-color: $gray-color-lighter;
+
+    @include breakpoint {
+      display: flex;
+      padding: 0 10px 15px;
+      border-bottom: 1px solid $td-brd-color;
+
+      &:first-child {
+        display: none;
+      }
+
+      &:nth-child(2) {
+        border-top: 1px solid $td-brd-color;
+      }
+
+      &:not(:first-child) {
+        flex-wrap: wrap;
+      }
+    }
+
+    &:first-child #{$root}__cell:first-child {
+      border-left: 1px solid $gray-color-lighter;
+    }
+
+    &:first-child #{$root}__cell:last-child {
+      border-right: 1px solid $gray-color-lighter;
+    }
+  }
+
+  &__cell {
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+    padding: $td-padding;
+    color: $td-text-color;
+    font-weight: 300;
+    border-bottom: 1px solid $td-brd-color;
+
+    @include breakpoint {
+      display: block;
+      width: 100% !important;
+      padding: 15px 10px 0;
+      border-bottom: none;
+    }
+
+    &_th {
+      color: $th-text-color;
+      font-weight: 500;
+      text-align: left;
+      background-color: $th-bg-color;
+    }
+
+    &_name {
+      width: 50%;
+
+      @include breakpoint {
+        max-width: 45%;
+        order: 0;
+      }
+    }
+
+    &_year {
+      width: 5%;
+      white-space: nowrap;
+
+      @include breakpoint {
+        max-width: 20%;
+        order: 4;
+      }
+    }
+
+    &_color {
+      width: 5%;
+      text-align: center;
+
+      @include breakpoint {
+        max-width: 15%;
+        order: 1;
+      }
+    }
+
+    &_status {
+      width: 10%;
+      white-space: nowrap;
+
+      @include breakpoint {
+        max-width: 50%;
+        order: 5;
+      }
+    }
+
+    &_price {
+      width: 15%;
+      white-space: nowrap;
+
+      @include breakpoint {
+        max-width: 40%;
+        text-align: right;
+        order: 2;
+      }
+    }
+
+    &_other {
+      width: 15%;
+      text-align: center;
+
+      @include breakpoint {
+        max-width: 30%;
+        text-align: right;
+        order: 6;
+      }
+    }
+
+    &_desc {
+      order: 3;
+      width: 100%;
+      color: $gray-color;
+      font-size: 13px;
+
+      @include _breakpoint {
+        display: none;
+      }
+    }
+  }
+
+  &__desc {
+    margin-top: 5px;
+    color: $gray-color;
+    font-size: 13px;
+
+    @include breakpoint {
+      display: none;
+    }
+  }
+
+  &__color {
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    overflow: hidden;
+
+    &_border {
+      border: 1px solid #dcdcdc;
+    }
+  }
+}

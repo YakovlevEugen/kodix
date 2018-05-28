@@ -1,0 +1,30 @@
+.main-header {
+  background-color: $base-color;
+
+  &__inner {
+    height: 100px;
+    margin-bottom: 5px;
+
+    @include breakpoint {
+      display: flex;
+      align-items: center;
+      height: 80px;
+      margin-bottom: 0;
+    }
+  }
+
+  &__logo {
+    text-align: center;
+  }
+}
+
+.header-logo {
+  display: inline-block;
+  margin: 0 10px;
+  
+  img {
+    @include breakpoint {
+      width: 300px;
+    }
+  }
+}

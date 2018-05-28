@@ -1,0 +1,95 @@
+.select {
+  position: relative;
+  font-size: 12px;
+
+  &--disabled {
+    opacity: .5;
+  }
+
+  &__btn {
+    position: relative;
+    height: $input-height;
+    width: 100%;
+    padding: 13px 25px 13px 10px;
+    text-overflow: ellipsis;
+    color: $placeholder-color;
+    font-size: 12px;
+    background: $input-bg-color;
+    border-width: $input-border-width $input-border-width $input-border-width*2;
+    border-color: $input-border-color;
+    border-style: solid;
+    transition: all .3s ease-out;
+    cursor: pointer;
+    overflow: hidden;
+
+    &:hover {
+      border-bottom-color: $primary-color;
+    }
+
+    &:after {
+      @include sprite($triangle);
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      transition: all .3s ease-out;
+    }
+  }
+
+  &__btn--opened {
+    border-bottom-color: black;
+
+    &:after {
+      transform: translateY(-50%) rotate(-180deg);
+    }
+  }
+
+  &__btn--selected {
+    color: $base-color;
+    border-bottom-color: black;
+  }
+
+  &__list {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    overflow: auto;
+    min-width: 200px;
+    max-height: 200px;
+    width: 100%;
+    margin: 0;
+    list-style: none;
+    background: white;
+    border-width: 0 $input-border-width $input-border-width;
+    border-color: $input-border-color;
+    border-style: solid;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .3s ease-out, top .3s ease-out, visibility .3s ease-out;
+    z-index: 50;
+
+    li {
+      padding: 13px 10px;
+      color: $input-placeholder-color;
+      cursor: pointer;
+
+      &:hover {
+        color: $base-color;
+      }
+    }
+  }
+
+  &__list--opened {
+    top: 40px;
+    visibility: visible;
+    transition: opacity .3s ease-out, top .3s ease-out;
+    opacity: 1;
+  }
+
+  &__list--overflow {
+    top: auto;
+    bottom: 40px;
+    transition: opacity .3s ease-out, bottom .3s ease-out, visibility .3s ease-out;
+  }
+}

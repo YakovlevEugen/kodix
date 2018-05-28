@@ -1,0 +1,18 @@
+.svg-icon {
+  display: inline-block;
+  fill: currentColor;
+  height: 1em;
+  vertical-align: middle;
+
+  a &,
+  button & {
+    pointer-events: none;
+  }
+}
+
+.icon {
+  &:before {
+    display: inline-block;
+    content: '';
+  }
+}

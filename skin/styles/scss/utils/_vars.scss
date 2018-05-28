@@ -1,0 +1,54 @@
+//** Colors
+$base-color: #282d30;
+$base-color-light: #323232;
+$base-color-dark: #111;
+$primary-color: #c4092f;
+$primary-color-light: #d74345;
+$placeholder-color: #999999;
+$acid-color: #88c504;
+$gray-color: #8b9497;
+$gray-color-light: #cbcbcc;
+$gray-color-lighter: #f5f6f6;
+$lightgray-color: #dcdcdc;
+
+//** Body
+$gutter: 20px;
+$gutter-y: 30px;
+$body-bg: white;
+$border-radius-base: 4px;
+$text-color: $base-color;
+
+//** Links
+$link-color: $base-color !default;
+$link-hover-color: $base-color !default;
+$link-decoration: none !default;
+$link-hover-decoration: none !default;
+
+//** Typography
+$font-family-base: 'Roboto', sans-serif !default;
+$font-family-heading: 'Roboto', sans-serif !default;
+$font-size-base: 15px !default;
+
+//** Buttons
+$btn-border-width: 2px;
+$btn-font-size: 16px;
+$btn-height: 40px;
+$btn-padding: 0 $gutter/2;
+
+//** Forms
+$input-bg-color: white;
+$input-border-width: 1px;
+$input-border-color: $lightgray-color;
+$input-height: 40px;
+$input-padding: 5px 10px;
+$textarea-height: 180px;
+$input-placeholder-color: $placeholder-color;
+$input-checkbox-size: 20px;
+
+//** Tables
+$th-bg-color: $primary-color;
+$th-text-color: white;
+$td-bg-color: $gray-color-lighter;
+$td-brd-color: #e6e9ea;
+$td-text-color: $base-color-light;
+$td-padding: $gutter-y/2 $gutter;

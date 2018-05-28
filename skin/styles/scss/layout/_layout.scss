@@ -1,0 +1,34 @@
+.main-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-width: 320px;
+  overflow: hidden;
+}
+
+.main-center {
+  flex: 1 0 auto;
+  max-width: 980px;
+  width: 100%;
+  margin: 55px auto;
+
+  @include _breakpoint {
+    padding: 0 10px;
+  }
+
+  @include breakpoint {
+    margin-bottom: 0;
+  }
+}
+
+.layout-main {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.layout-main-tablet {
+  @include breakpoint {
+    padding: 0 20px;
+  }
+}

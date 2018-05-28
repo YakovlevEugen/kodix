@@ -1,0 +1,26 @@
+.color-filter {
+  position: relative;
+  margin-top: 20px;
+
+  &__ttl {
+    position: absolute;
+    top: -10px;
+    color: $input-placeholder-color;
+    font-size: 12px;
+  }
+
+  &__list {
+    margin-top: -10px;
+    margin-left: -20px;
+
+    @include breakpoint {
+      margin-top: 0;
+    }
+  }
+
+  &__item {
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 20px;
+  }
+}

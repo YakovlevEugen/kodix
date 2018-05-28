@@ -1,0 +1,87 @@
+.uppercase { text-transform: uppercase; }
+.clear {clear:both;}
+.left {float: left;}
+.right  {float: right;}
+.img-left {float: left; margin:0 15px 10px 0}
+.img-right  {float: right; margin:0 0 10px 15px}
+.t-left {text-align: left;}
+.t-right  {text-align: right;}
+.center {text-align: center;}
+.ofl {overflow: hidden;	_zoom: 1;}
+.base {color: $base-color;}
+.red {color: $primary-color;}
+.bold {font-weight: 600;}
+.bbold {font-weight: 600; font-size: 16px;}
+.hidden {display: none;}
+.nowrap {white-space: nowrap;}
+
+.tablet-hide {
+  @include breakpoint {
+    display: none;
+  }
+}
+
+.clearfix {
+  &:before,
+  &:after {
+    clear: both;
+    content: '';
+    display: table;
+  }
+}
+
+.ttl-base {
+  margin-top: 0;
+  margin-bottom: 30px;
+  font-family: $font-family-heading;
+  font-size: 42px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.subttl-base {
+  margin-top: 0;
+  margin-bottom: 30px;
+  padding-left: 10px;
+  font-family: $font-family-heading;
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-left: 3px solid $gray-color;
+}
+
+.design-elements {
+  margin: 40px auto;
+
+  &__row {
+    display: flex;
+    margin-left: -$gutter;
+
+    @include breakpoint {
+      display: block;
+    }
+  }
+
+  &__item {
+    background-color: white;
+    border-radius: $border-radius-base;
+    flex: 1;
+    margin: 0 0 $gutter $gutter;
+    padding: $gutter;
+  }
+
+  .svg-icon {
+    height: 30px;
+    width: 30px;
+  }
+}
+
+.grid {
+  display: flex;
+  margin: 0 0 $gutter (-$gutter);
+
+  &__cell {
+    flex: 1;
+    margin-left: $gutter;
+  }
+}
